@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Список задач</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+	<h1>Список задач</h1>
+	<form id="task-form">
+		<input type="text" id="task-title" placeholder="Новая задача..." required>
+		<input type="text" id="task-description" placeholder="Описание...">
+		<label for="task-deadline"></label>
+		<input type="date" id="task-deadline">
+		<button type="submit">Добавить</button>
+	</form>
+
+	<ul id="task-list">
+		{% for task in tasks %}
+			<li class="task" data-id="{{ task.id }}">
+				<div>
+					<span class="task-title">{{ task.title }}</span>
+					<span class="task-description">{{ task.description }}</span>
+					<span class="task-deadline">Дедлайн: {{ task.deadline or "None" }}</span>
+				</div>	
+				<div class="task-buttons">
+					<button onclick="editTask({{ task.id }})">Изменить</button>
+					<button onclick="deleteTask({{ task.id }})">Удалить</button>
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+
+	<div id="editTaskModal" class="modal" style="display: none;">
+		<div class="modal-content">
+			<input type="text" id="editTaskTitle" placeholder="Новое название">
+			<input type="text" id="editTaskDescription" placeholder="Новое описание">
+			<label for="taskDeadline">Новый дедлайн(YYY-MM-DD):</label>
+			<input type="date" id="editTaskDeadline">
+			<button id="saveTask">Сохранить</button>
+			<button id="closeModal">Отмена</button>
+		</div>
+	</div>
+
+	<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

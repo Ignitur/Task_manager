@@ -1,0 +1,114 @@
+
+body {
+	font-family: Arial, sans-serif;
+	max-width: 600px;
+	margin: 20px auto;
+	text-align: center;
+}
+
+h1 {
+	color: #333;
+}
+
+form {
+	margin-bottom: 20px;
+}
+
+input {
+	padding: 8px;
+	width: 70%;
+}
+
+button {
+	padding: 8px 10px;
+	cursor: pointer;
+	border: none;
+	background: #007BFF;
+	color: white;
+	border-radius: 5px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+li {
+	background: #f4f4f4;
+	padding: 10px;
+	margin: 5px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 5px;
+	position: relative;
+}
+
+.task span {
+	background: white;
+}
+
+.task-title {
+	font-weight: bold;
+	display: flex;
+	margin-left: 3px ;
+}
+
+.task-description {
+	font-size: 0.9em;
+	color: #666;
+	display: flex;
+	margin-top: 2px;
+	margin-left: 3px;
+}
+
+.task-deadline {
+	font-size: 0.9em;
+	color: #888;
+	display: flex;
+	margin-top: 2px;
+	margin-left: 3px;
+}
+
+.task-soon {
+	background-color: #ffcccc;
+}
+
+.task-buttons {
+	display: flex;
+	gap: 5px;
+}
+
+button.edit {
+	background: orange;
+}
+
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	display: none;
+}
+
+.modal-content {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
